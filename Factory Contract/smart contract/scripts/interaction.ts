@@ -2,8 +2,6 @@ import { ethers } from "hardhat";
 
 async function main() {
     const FactoryArtAddress = "0x879eE8758BC8230364447f12A0Ef90843F96827B";
-
-    const ownerAddress = "0x835fC571406719a6B518A98fe5AF265d256Aff06"
     
     const contractArtifact = require('../artifacts/contracts/FactoryArt.sol/FactoryArt.json');
     const FactoryArtABI = contractArtifact.abi;
@@ -12,7 +10,7 @@ async function main() {
 
 
     const name = "My Artwork";
-    const url = "https://my-artwork.jpg";
+    const url = "https://images.joseartgallery.com/100736/what-kind-of-art-is-popular-right-now.jpg";
 
     const FactoryArtTx = await FactoryArt.createArtwork(name, url);
     await FactoryArtTx.wait();
